@@ -9,14 +9,14 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch all matches
-    axios.get('http://localhost:5000/api/matches')
+    axios.get('https://football-six-iota.vercel.app/api/matches')
       .then((response) => setMatches(response.data))
       .catch((error) => console.error('Error fetching matches:', error));
   }, []);
 
   const handleDelete = (id) => {
     // Delete a match
-    axios.delete(`http://localhost:5000/api/matches/${id}`)
+    axios.delete(`https://football-six-iota.vercel.app/api/matches/${id}`)
       .then(() => {
         setMatches(matches.filter((match) => match._id !== id));
       })

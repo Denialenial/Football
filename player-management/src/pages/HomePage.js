@@ -9,7 +9,7 @@ const HomePage = () => {
   const [editingPlayer, setEditingPlayer] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/players')
+    axios.get('https://football-six-iota.vercel.app/api/players')
       .then((response) => {
         setPlayers(response.data);
         setLoading(false);
@@ -21,7 +21,7 @@ const HomePage = () => {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/players/${id}`)
+    axios.delete(`https://football-six-iota.vercel.app/api/players/${id}`)
       .then(() => {
         setPlayers(players.filter(player => player._id !== id));
       })
@@ -36,7 +36,7 @@ const HomePage = () => {
   };
 
   const handleUpdate = (updatedPlayer) => {
-    axios.put(`http://localhost:5000/api/players/${updatedPlayer._id}`, updatedPlayer)
+    axios.put(`https://football-six-iota.vercel.app/api/players/${updatedPlayer._id}`, updatedPlayer)
       .then((response) => {
         setPlayers(players.map(player =>
           player._id === updatedPlayer._id ? response.data : player

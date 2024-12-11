@@ -30,7 +30,7 @@ const AddPlayerPage = () => {
     };
 
     axios
-      .post('http://localhost:5000/api/players', newPlayer)
+      .post('https://football-six-iota.vercel.app/api/players', newPlayer)
       .then(() => {
         window.location.href = '/';
       })
