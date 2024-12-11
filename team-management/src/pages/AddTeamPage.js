@@ -9,7 +9,7 @@ const AddTeamPage = () => {
 
   const handleAddTeam = (teamData) => {
     axios
-      .post('http://localhost:5000/api/teams', teamData)
+      .post('https://football-six-iota.vercel.app/api/teams', teamData)
       .then((response) => {
         console.log('Team added:', response.data);
         navigate('/'); 

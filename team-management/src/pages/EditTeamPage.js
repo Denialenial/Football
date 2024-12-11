@@ -12,7 +12,7 @@ const EditTeamPage = () => {
 
   useEffect(() => {
     // Fetch the team data based on the team ID
-    axios.get(`http://localhost:5000/api/teams/${id}`)
+    axios.get(`https://football-six-iota.vercel.app/api/teams/${id}`)
       .then((response) => {
         setTeam(response.data);  // Populate the form with existing data
         setLoading(false);  // Set loading to false after fetching the data
@@ -25,7 +25,7 @@ const EditTeamPage = () => {
 
   const handleSubmit = (updatedTeamData) => {
     // Update the team data in the backend
-    axios.put(`http://localhost:5000/api/teams/${id}`, updatedTeamData)
+    axios.put(`https://football-six-iota.vercel.app/api/teams/${id}`, updatedTeamData)
       .then((response) => {
         console.log('Team updated:', response.data);
         navigate('/');  // Redirect to home page after update

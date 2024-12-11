@@ -18,7 +18,7 @@ const TeamForm = ({ team, onSubmit }) => {
     }
 
     // Fetch all players and sort them alphabetically
-    axios.get('http://localhost:5000/api/players')
+    axios.get('https://football-six-iota.vercel.app/api/players')
       .then((response) => {
         const sortedPlayers = response.data.sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically
         setAllPlayers(sortedPlayers);

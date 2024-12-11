@@ -10,13 +10,13 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch the list of teams from the backend
-    axios.get('http://localhost:5000/api/teams')
+    axios.get('https://football-six-iota.vercel.app/api/teams')
       .then(response => setTeams(response.data))
       .catch(error => console.error('Error fetching teams:', error));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/teams/${id}`)
+    axios.delete(`https://football-six-iota.vercel.app/api/teams/${id}`)
       .then(() => {
         setTeams(teams.filter(team => team._id !== id));
       })
